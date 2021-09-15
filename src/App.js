@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import {createUseStyles} from 'react-jss';
+import Header from './components/header';
+import Home from './components/home'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+const useStyles = createUseStyles({
+  body: {
+    textAlign: 'center'
+  }
+});
 
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Header/>
+        <body className={classes.body}>
+          <Switch>
+            <Route path="/" exact={true} component={Home} ></Route>
+            {/* <Route path="/order" component={}></Route>
+            <Route path="/checkout" component={}></Route>
+            <Route path="/about_us" component={}></Route> */}
+          </Switch>
+        </body>
+      </Router>
     </div>
   );
 }
 
 export default App;
+
