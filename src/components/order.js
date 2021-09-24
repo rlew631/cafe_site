@@ -67,9 +67,8 @@ function Order() {
   const classes = useStyles();
   return (
     <div className={classes.main}>
-      HELLLOOOOOO
+      This is supposed to show the response from the catalog API: 
       {JSON.stringify(response, null, 2) }
-      {/* {response} */}
     </div>
   );
 }
