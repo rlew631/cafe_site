@@ -1,4 +1,5 @@
 import {createUseStyles} from 'react-jss';
+import { Client, Environment } from 'square'
 import {
   Card,
   CardImg,
@@ -28,6 +29,11 @@ const useStyles = createUseStyles({
     textAlign: 'left'
   }
 });
+
+const client = new Client({
+  environment: Environment.Sandbox,
+  accessToken: process.env.SQUARE_ACCESS_TOKEN,
+})
 
 // try {
 //   const response = await client.catalogApi.searchCatalogItems({});
