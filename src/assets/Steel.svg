@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <linearGradient x1="5.65899345%" y1="3.97577501%" x2="93.3364292%" y2="95.4420111%" id="linearGradient-1">
+            <stop stop-color="#BCC1D1" offset="0%"></stop>
+            <stop stop-color="#757D8E" offset="2.98170365%"></stop>
+            <stop stop-color="#A1A6B5" offset="20.0874163%"></stop>
+            <stop stop-color="#D0D9E4" offset="48.9961844%"></stop>
+            <stop stop-color="#A8B0C8" offset="75.4517816%"></stop>
+            <stop stop-color="#A9B0C8" offset="83.3008686%"></stop>
+            <stop stop-color="#A6AEC6" offset="90.1535337%"></stop>
+            <stop stop-color="#7E8AA8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-727.000000, -327.000000)">
+            <g id="Group" transform="translate(727.000000, 327.000000)">
+                <rect id="Rectangle-Copy-38" stroke="#8D97B3" stroke-width="2" x="1" y="1" width="28" height="28" rx="7"></rect>
+                <rect id="Rectangle-Copy-39" fill="url(#linearGradient-1)" transform="translate(15.000000, 15.000000) scale(1, -1) translate(-15.000000, -15.000000) " x="5" y="5" width="20" height="20" rx="3"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

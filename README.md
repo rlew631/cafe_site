@@ -1,4 +1,3 @@
-ToDo:
-- add footer
-- fix flexbox reverse on the home page
-- fix the nav bar
+Gotta ditch all the mfg site stuff and update to do cafe site stuff.
+
+Add firebase and deploy...

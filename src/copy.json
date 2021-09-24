@@ -1,0 +1,128 @@
+{
+"Home":{
+  "WhatWeDoStatement":"Located strategically in the Bay Area Pressta is a premiere engineering, design and precision manufacturing facility specializing in R&D, prototyping and assembly. No matter what part of the product design cycle Pressta can help bring your ideas to life!",
+  "AboutUsStatement":"Pressta currently consists of five full time employees with a diverse set of skills ranging from graphic design to welding. Being small allows us to give our clients our full attention and keep them in the loop as their project comes together.",
+  "WhyUsePresstaStatement":"We can help with any stage of your product design process from inspiration to ideation to implementation. We all know that finding new vendors isn't easy. Whether you're looking to just test the waters or commit long-term our team will stand by our work and do whatever it takes to ensure your project is a success.",
+  "IndustriesStatement":"Pressta has worked with companies in the Aerospace, Automotive, Energy and Research sectors.",
+  "ClassificationsCertifications":"Pressta is ITAR registered, a small business and has begun the process of becoming ISO-9001 / AS9100D certified.  ",
+  "BottomCards":{
+    "AdvancedMachinery":"We use modern high speed machining strategies to turn jobs around quicker than the competition.",
+    "OnTimeEverytime":"Pressta MFG’s combined 21 years of experience in metalworking and fabrication helps keep projects on track and allows us to foresee potential issues before they come up.",
+    "SkilledExperts":"Our comprehensive background allows us to offer more services in-house saving you time and increasing your bottom line by preventing delays and expensive reworks.",
+    "FulfillingYourNeeds":"Our engineering expertise allows us to turn your idea into a finished product and reproduce / repair pieces which are no longer in production."
+  }
+},
+"Design":{
+  "Statement": "We can help bring your idea to life with our expert design team. They can help any stage of the process from turning your concept into a reality or applying that final polish. We specialize in design for manufacturability / servicability and top of the line analysis. Our holistic design approach gets you a more refined final product with fewer revisions and reworks.",
+  "Services":{
+    "Mechanical":[
+      "CAD (Computer Aided Design)",
+      "FEA (Finite Element Analysis)",
+      "CFD (Computational Fluid Dynamics)",
+      "FMEA (Failure Mode and Effect Analysis)",
+      "Design for Manufacturability",
+      "Design for Asembly",
+      "Design for Servicability"],
+    "Electrical":[
+      "Firmware Programming",
+      "PCB Design",
+      "Design for PCB Assembly",
+      "Product Development",
+      "Circuit Design"],
+    "Design":[
+      "Mockups",
+      "Renderings",
+      "Weighted Models"
+    ]
+  }
+},
+"Manufacturing":{
+  "Statement": "We specialize in CNC machined parts, gaskets and welded assemblies. We are able to manufacture most metal and plastic parts with our in-house machine shop and finishing capabilities.",
+  "Services":{
+    "Machining":{
+      "Statement":"We can produce turned and milled parts using our in-house engine lathe and 4-axis CNC Mill",
+      "Materials":{
+        "Steel":[
+          "Mild (A36)",
+          "Cold Rolled (1018)",
+          "4140", "4340",
+          "Tool Steel",
+          "300 Series Stainless",
+          "400 Series Stainless"],
+        "Aluminum":[
+          "300 Series Casting Alloys",
+          "2000 Series Alloys",
+          "5000 Series Alloys",
+          "6000 Series Alloys",
+          "7000 Series Alloys",
+          "1100 “Pure” Aluminum",
+          "MIC6 Tooling Plate",
+          "Other Aluminum Tooling Plate"],
+        "BrassBronze":[
+          "220 Bronze Sheet",
+          "385 Architectural Brass",
+          "510",
+          "544 High Strength",
+          "642 High Strength",
+          "655 Weldable",
+          "841 Graphite Impregnated",
+          "863 High Strength",
+          "900 Series Bronze"],
+        "Plastic":[
+          "ABS",
+          "Acetal (Delrin)",
+          "PEI (Ultem)",
+          "PEEK",
+          "HDPE",
+          "Fiber Reinforced Plastics"]
+        },
+        "Finishes":{
+        "Anodized":[
+          "Type I, Class 1, Clear",
+          "Type I, Class 2, Color",
+          "Type II, Class 1, Clear",
+          "Type II, Class 2, Black",
+          "Type II, Class 2, Colored",
+          "Hard Clear",
+          "Hard Black",
+          "Hard Colors",
+          "Chromic",
+          "Tataric",
+          "PTFE on Hard",
+          "Colored Titanium"],
+        "Other":[
+          "Alodine / Alocrom",
+          "Irradiate",
+          "Pickling",
+          "Electropolishing",
+          "Vapor Polishing",
+          "Mirror Polishing",
+          "Powder Coating",
+          "Bead Blast",
+          "Chromate Conversion Coating",
+          "Electroless Nickel Plating",
+          "Nickel Plated",
+          "Passivation",
+          "Cerakoting",
+          "Vibratory Polishing",
+          "Painting"]
+        }
+    },
+    "Printing":{
+      "Statement":"We have both SLA and FDM 3D printers to prototype plastic components.",
+      "Materials":["Resin", "ABS", "PLA", "Nylon", "PETG", "Carbon Fiber Reinforced", "PVA"]
+    },
+    "LaserCutting":{
+      "Statement":"We frequently use laser cutting to produce gaskets and stencils / graphics.",
+      "Materials":["Most plastics","Wood","Metal","Glass"]
+    },
+    "Welding":{
+      "Statement":"We use TIG and MIG welding to join complex assemblies and perform repairs to existing components",
+      "Materials":["Steel","Aluminum","Brass","Titanium"]
+    }
+  }
+},
+"Contact":{
+  "Email":"Shop@GetPressta.com",
+  "Phone":"(415) 349-5350"
+}}
