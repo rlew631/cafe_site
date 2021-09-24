@@ -20,13 +20,17 @@ const useStyles = createUseStyles({
   }
 });
 
+//This is supposed to help with the CORS / API call problem
+// resonse_object.header("Access-Control-Allow-Origin", "*");
+// resonse_object.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
 function App() {
   const classes = useStyles();
   return (
     <div>
       <Router>
         <Header/>
-        <body className={classes.body}>
+        <div className={classes.body}>
           <Switch>
             <Route path="/" exact={true} component={Home} ></Route>
             <Route path="/order" component={Order}></Route>
@@ -37,7 +41,7 @@ function App() {
             <Route path="/manufacturing-welding" component={ManufacturingWelding}></Route>
             <Route path="/contact" component={Contact}></Route>
           </Switch>
-        </body>
+        </div>
       </Router>
     </div>
   );
