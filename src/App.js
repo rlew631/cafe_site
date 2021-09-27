@@ -20,10 +20,6 @@ const useStyles = createUseStyles({
   }
 });
 
-//This is supposed to help with the CORS / API call problem
-// resonse_object.header("Access-Control-Allow-Origin", "*");
-// resonse_object.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-
 function App() {
   const classes = useStyles();
   return (
