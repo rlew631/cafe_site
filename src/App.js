@@ -1,4 +1,6 @@
+import React, { Component } from 'react';
 import {createUseStyles} from 'react-jss';
+import logo from './logo.svg';
 import Header from './components/header';
 import Home from './components/home'
 import Order from './components/order';
@@ -20,28 +22,39 @@ const useStyles = createUseStyles({
   }
 });
 
-function App() {
-  const classes = useStyles();
-  return (
-    <div>
-      <Router>
-        <Header/>
-        <div className={classes.body}>
-          <Switch>
-            <Route path="/" exact={true} component={Home} ></Route>
-            <Route path="/order" component={Order}></Route>
-            <Route path="/manufacturing" component={Manufacturing}></Route>
-            <Route path="/manufacturing-machining" component={ManufacturingMachining}></Route>
-            <Route path="/manufacturing-printing" component={ManufacturingPrinting}></Route>
-            <Route path="/manufacturing-laser" component={ManufacturingLaser}></Route>
-            <Route path="/manufacturing-welding" component={ManufacturingWelding}></Route>
-            <Route path="/contact" component={Contact}></Route>
-          </Switch>
+class App extends Component {
+  state = {
+      data: null
+    };
+  
+    componentDidMount() {
+      this.callBackendAPI()
+        .then(res => this.setState({ data: res.express }))
+        .catch(err => console.log(err));
+    }
+      // fetching the GET route from the Express server which matches the GET route from server.js
+    callBackendAPI = async () => {
+      const response = await fetch('/express_backend');
+      const body = await response.json();
+  
+      if (response.status !== 200) {
+        throw Error(body.message) 
+      }
+      return body;
+    };
+  
+    render() {
+      return (
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="App-title">Welcome to React</h1>
+          </header>
+          <p className="App-intro">{this.state.data}</p>
         </div>
-      </Router>
-    </div>
-  );
-}
-
-export default App;
+      );
+    }
+  }
+  
+  export default App;
 
