@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const { Client, Environment, ApiError } = require('square');
 // import { v4 as uuidv4 } from 'uuid'
 // square api stuff
-// import keys from "../keys.json"
+import keys from "../keys.json"
 // import { Client, Environment } from 'square'
 
 app.use(bodyParser.json());

@@ -42,15 +42,27 @@ class App extends Component {
       }
       return body;
     };
-  
+    //main part of the app
     render() {
+      // const classes = useStyles();
       return (
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <p className="App-intro">{this.state.data}</p>
+          <Router>
+            <Header/>
+            <div>
+              <Switch>
+                <Route path="/" exact={true} component={Home} ></Route>
+                <Route path="/order" component={Order}></Route>
+                <Route path="/manufacturing" component={Manufacturing}></Route>
+                <Route path="/manufacturing-machining" component={ManufacturingMachining}></Route>
+                <Route path="/manufacturing-printing" component={ManufacturingPrinting}></Route>
+                <Route path="/manufacturing-laser" component={ManufacturingLaser}></Route>
+                <Route path="/manufacturing-welding" component={ManufacturingWelding}></Route>
+                <Route path="/contact" component={Contact}></Route>
+              </Switch>
+              <p className="App-intro">{this.state.data}</p>
+            </div>
+          </Router>
         </div>
       );
     }
