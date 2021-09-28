@@ -22,6 +22,11 @@ const useStyles = createUseStyles({
   }
 });
 
+function listItems(data){
+  console.log(data);
+  return(data.map((d) => <li>{d}</li>));
+}
+
 class App extends Component {
   state = {
       data: null
@@ -30,7 +35,7 @@ class App extends Component {
     componentDidMount() {
       this.callBackendAPI()
         .then(res => this.setState({ data: res.express }))
-        // .then(res => this.setState({ data: JSON.stringify(res.express) }))
+        // .then(res => console.log(res))
         .catch(err => console.log(err));
     }
       // fetching the GET route from the Express server which matches the GET route from server.js
@@ -41,8 +46,11 @@ class App extends Component {
       if (response.status !== 200) {
         throw Error(body.message) 
       }
+      // console log to see what's up
+      console.log(body)
       return body;
     };
+
     //main part of the app
     render() {
       // const classes = useStyles();
@@ -62,6 +70,9 @@ class App extends Component {
                 <Route path="/contact" component={Contact}></Route>
               </Switch>
               <p className="App-intro">{this.state.data}</p>
+              {/* <p className="App-intro">{JSON.stringify(this.state.data)}</p> */}
+              {/* <p>{listItems([1,2,3])}</p> */}
+              {/* <p>{listItems(this.state.data)}</p> */}
             </div>
           </Router>
         </div>

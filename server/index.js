@@ -18,11 +18,12 @@ const client = new Client({
   accessToken: data.token
 })
 
+// This gets the catalog items from square
 async function getItems(){
   try {
     var response
     response = await client.catalogApi.searchCatalogItems({});
-    response = JSON.parse(response.body).items
+    // response = JSON.parse(response.body).items
     console.log(response);
     return response;
 
@@ -32,11 +33,9 @@ async function getItems(){
   }
 }
 
-items = getItems()
-
-// not sure about this section from some sample code
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+// // not sure about this bodyParser section from some sample code
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
 
 // This displays message that the server running and listening to
 app.listen(port, () => {
@@ -44,44 +43,8 @@ app.listen(port, () => {
 });
 
 // create a GET route
-app.get('/express_backend', (req, res) => { //Line 9
+app.get('/express_backend', (req, res) => {
+  // console.log(getItems())
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
-  // res.send({ express: items });
+  // res.send({ express: getItems()});
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// async function getItems(){
-//   try {
-//     var response
-//     // response.header("Access-Control-Allow-Origin", "*");
-//     // response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     response = await client.catalogApi.searchCatalogItems({});
-//     response = await response.json()
-//     console.log(response);
-//     return response;
-//     // return response.data;
-
-//   } catch(error) {
-//     console.log(error);
-//     return {"error" : "PROBLEEMMMMM"}
-//   }
-// }
-
-// var req = getItems()
-// req.headers({
-//   "Access-Control-Allow-Origin" : "*",
-//   "Access-Control-Allow-Headers" : "Origin, X-Requested-With, Content-Type, Accept"});
-
