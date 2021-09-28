@@ -22,65 +22,61 @@ const useStyles = createUseStyles({
   }
 });
 
-function listItems(data){
-  console.log(data);
-  return(data.map((d) => <li>{d}</li>));
-}
-
 class App extends Component {
   state = {
       data: null
     };
   
-    componentDidMount() {
-      this.callBackendAPI()
-        // this one works with the string response
-        // .then(res => this.setState({ data: res.express }))
+  componentDidMount() {
+    this.callBackendAPI()
+      // this one works with the string response
+      // .then(res => this.setState({ data: res.express }))
 
-        .then(res => this.setState({ data: res }))
+      // this one works importing the square data
+      .then(res => this.setState({ data: res }))
 
-        //this one works logging the square data
-        // .then(res => console.log(res))
+      //this one works logging the square data
+      // .then(res => console.log(res))
 
-        .catch(err => console.log(err));
-    }
-      // fetching the GET route from the Express server which matches the GET route from server.js
-    callBackendAPI = async () => {
-      const response = await fetch('/express_backend');
-      const body = await response.json();
-  
-      if (response.status !== 200) {
-        throw Error(body.message) 
-      }
-      return body;
-    };
-
-    //main part of the app
-    render() {
-      // const classes = useStyles();
-      return (
-        <div className="App">
-          <Router>
-            <Header/>
-            <div>
-              <Switch>
-                <Route path="/" exact={true} component={Home} ></Route>
-                <Route path="/order" component={Order}></Route>
-                <Route path="/manufacturing" component={Manufacturing}></Route>
-                <Route path="/manufacturing-machining" component={ManufacturingMachining}></Route>
-                <Route path="/manufacturing-printing" component={ManufacturingPrinting}></Route>
-                <Route path="/manufacturing-laser" component={ManufacturingLaser}></Route>
-                <Route path="/manufacturing-welding" component={ManufacturingWelding}></Route>
-                <Route path="/contact" component={Contact}></Route>
-              </Switch>
-              {/* <p className="App-intro">{this.state.data}</p> */}
-              <p className="App-intro">{JSON.stringify(this.state.data)}</p>
-            </div>
-          </Router>
-        </div>
-      );
-    }
+      .catch(err => console.log(err));
   }
+    // fetching the GET route from the Express server which matches the GET route from server.js
+  callBackendAPI = async () => {
+    const response = await fetch('/express_backend');
+    const body = await response.json();
+
+    if (response.status !== 200) {
+      throw Error(body.message) 
+    }
+    return body;
+  };
+
+  //main part of the app
+  render() {
+    // const classes = useStyles();
+    return (
+      <div className="App">
+        <Router>
+          <Header/>
+          <div>
+            <Switch>
+              <Route path="/" exact={true} component={Home} ></Route>
+              <Route path="/order" component={Order}></Route>
+              <Route path="/manufacturing" component={Manufacturing}></Route>
+              <Route path="/manufacturing-machining" component={ManufacturingMachining}></Route>
+              <Route path="/manufacturing-printing" component={ManufacturingPrinting}></Route>
+              <Route path="/manufacturing-laser" component={ManufacturingLaser}></Route>
+              <Route path="/manufacturing-welding" component={ManufacturingWelding}></Route>
+              <Route path="/contact" component={Contact}></Route>
+            </Switch>
+            {/* <p className="App-intro">{this.state.data}</p> */}
+            {/* <p className="App-intro">{JSON.stringify(this.state.data)}</p> */}
+          </div>
+        </Router>
+      </div>
+    );
+  }
+}
   
   export default App;
 
