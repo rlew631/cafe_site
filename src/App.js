@@ -36,8 +36,12 @@ class App extends Component {
       this.callBackendAPI()
         // this one works with the string response
         // .then(res => this.setState({ data: res.express }))
-        // .then(res => this.setState({ data: res }))
-        .then(res => console.log(res))
+
+        .then(res => this.setState({ data: res }))
+
+        //this one works logging the square data
+        // .then(res => console.log(res))
+
         .catch(err => console.log(err));
     }
       // fetching the GET route from the Express server which matches the GET route from server.js
@@ -70,9 +74,7 @@ class App extends Component {
                 <Route path="/contact" component={Contact}></Route>
               </Switch>
               {/* <p className="App-intro">{this.state.data}</p> */}
-              {/* <p className="App-intro">{JSON.stringify(this.state.data)}</p> */}
-              {/* <p>{listItems([1,2,3])}</p> */}
-              {/* <p>{listItems(this.state.data)}</p> */}
+              <p className="App-intro">{JSON.stringify(this.state.data)}</p>
             </div>
           </Router>
         </div>
