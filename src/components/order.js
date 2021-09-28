@@ -1,42 +1,86 @@
 import React, { Component } from 'react';
 import {createUseStyles} from 'react-jss';
-// import {
-//   Card,
-//   CardImg,
-//   CardText,
-//   CardBody,
-//   CardTitle,
-//   // CardSubtitle,
-//   Container,
-//   Row,
-//   Col
-// } from 'reactstrap';
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  // CardSubtitle,
+  Container,
+  Row,
+  Col
+} from 'reactstrap';
 
 
-const useStyles = createUseStyles({
-  main: {
-    paddingTop: 90
-  },
-  cardCol: {
-    paddingBottom: "2em"
-  },
-  card: {
-    height:"100%",
-  },
-  services: {
-    textAlign: 'left'
-  },
-  statement: {
-    textAlign: 'left'
-  }
-});
+// const useStyles = createUseStyles({
+//   main: {
+//     paddingTop: 90
+//   },
+//   cardCol: {
+//     paddingBottom: "2em"
+//   },
+//   card: {
+//     height:"100%",
+//   },
+//   services: {
+//     textAlign: 'left'
+//   },
+//   statement: {
+//     textAlign: 'left'
+//   }
+// });
 
-function makeCards(data){
-  // console.log(data);
-  return(data.map((d) =>
-    <li>{d}</li>
-  ));
-}
+// const makeCards = () => {
+//   // console.log(data);
+//   return(
+//     data.map((d) =>
+//       <Card>
+//         <CardBody>
+//           <CardTitle tag="h3">d.item_data.name</CardTitle>
+//           <CardText>
+//             {d.item_data.description}
+//             < br />
+//             {d.item_data.variations.item_variation_data.price_money.amount}
+//           </CardText>
+//         </CardBody>
+//       </Card>
+//     )
+//   );
+// }
+
+// renderItems(arr) {
+//   if(arr){
+//         return arr.map(({id, name}) => {
+//              return (
+//                  <li className="list-group-item"
+//             key={id}
+//             onClick={() => this.props.onItemSelected(id)}>
+//                     {name}
+//                 </li>
+//             );
+//         });
+//      }
+//   }
+
+function makeCards(arr){ if(arr){
+    return( arr.map((d) => {
+      // console.log(d.item_data.variations.item_variation_data)
+      return(
+        <Card>
+          <CardBody>
+            <CardTitle tag="h3">{d.item_data.name}</CardTitle>
+            <CardText>
+              {d.item_data.description}
+              < br />
+              {/* {d.item_data.variations.item_variation_data.price_money.amount} */}
+            </CardText>
+          </CardBody>
+        </Card>
+      );
+    })
+  )
+}};
 
 class Order extends Component {
   state = {
@@ -69,8 +113,9 @@ class Order extends Component {
   render() {
     return (
       <div>
-        This is supposed to show the response from the catalog API: 
-        <p className="App-intro">{JSON.stringify(this.state.data)}</p>
+        <br /><br /><br /><br /><br /><br />
+        From the catalog API: 
+        {makeCards(this.state.data)}
       </div>
     );
   }
