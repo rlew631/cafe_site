@@ -34,8 +34,10 @@ class App extends Component {
   
     componentDidMount() {
       this.callBackendAPI()
-        .then(res => this.setState({ data: res.express }))
-        // .then(res => console.log(res))
+        // this one works with the string response
+        // .then(res => this.setState({ data: res.express }))
+        // .then(res => this.setState({ data: res }))
+        .then(res => console.log(res))
         .catch(err => console.log(err));
     }
       // fetching the GET route from the Express server which matches the GET route from server.js
@@ -46,8 +48,6 @@ class App extends Component {
       if (response.status !== 200) {
         throw Error(body.message) 
       }
-      // console log to see what's up
-      console.log(body)
       return body;
     };
 
@@ -69,7 +69,7 @@ class App extends Component {
                 <Route path="/manufacturing-welding" component={ManufacturingWelding}></Route>
                 <Route path="/contact" component={Contact}></Route>
               </Switch>
-              <p className="App-intro">{this.state.data}</p>
+              {/* <p className="App-intro">{this.state.data}</p> */}
               {/* <p className="App-intro">{JSON.stringify(this.state.data)}</p> */}
               {/* <p>{listItems([1,2,3])}</p> */}
               {/* <p>{listItems(this.state.data)}</p> */}

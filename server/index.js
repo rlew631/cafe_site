@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
+
 // import { v4 as uuidv4 } from 'uuid'
 // square api stuff
 let data = require('../keys.json')
@@ -18,33 +19,47 @@ const client = new Client({
   accessToken: data.token
 })
 
-// This gets the catalog items from square
-async function getItems(){
-  try {
-    var response
-    response = await client.catalogApi.searchCatalogItems({});
-    // response = JSON.parse(response.body).items
-    console.log(response);
-    return response;
-
-  } catch(error) {
-    console.log(error);
-    return {"error" : "PROBLEEMMMMM"}
-  }
-}
-
-// // not sure about this bodyParser section from some sample code
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
-
 // This displays message that the server running and listening to
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
+// This gets the catalog items from square
+// async function getItems(){
+//   try {
+//     var response
+//     response = await client.catalogApi.searchCatalogItems({});
+//     // response = JSON.parse(response.body).items
+//     console.log(response);
+//     return response;
+
+//   } catch(error) {
+//     console.log(error);
+//     return {"error" : "PROBLEEMMMMM"}
+//   }
+// }
+
 // create a GET route
-app.get('/express_backend', (req, res) => {
-  // console.log(getItems())
-  res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
-  // res.send({ express: getItems()});
+// app.get('/express_backend', (req, res) => {
+//   // default message
+//   // res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
+
+//   // response from square
+//   const items = await getItems()
+//   console.log(items)
+//   res.send(items);
+// });
+
+// https://masteringjs.io/tutorials/express/promises
+app.get('/express_backend', async (req, res) => {
+  try {
+    var response
+    response = await client.catalogApi.searchCatalogItems({});
+    // response = JSON.parse(response.body).items
+    console.log(response);
+  } catch(error) {
+    console.log(error);
+    response = {"error" : "PROBLEEMMMMM"}
+  }
+  res.send(JSON.parse(response.body).items)
 });
