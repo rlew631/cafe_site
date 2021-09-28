@@ -10,7 +10,6 @@ const bodyParser = require('body-parser');
 // square api stuff
 let data = require('../keys.json')
 const { Client, Environment, ApiError } = require('square');
-// import { Client, Environment } from 'square'
 
 //initializing the square api client
 const client = new Client({
@@ -22,9 +21,6 @@ const client = new Client({
 async function getItems(){
   try {
     var response
-    // doesn't seem like these header things are needed now that express is working
-    // response.header("Access-Control-Allow-Origin", "*");
-    // response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     response = await client.catalogApi.searchCatalogItems({});
     response = JSON.parse(response.body).items
     console.log(response);
