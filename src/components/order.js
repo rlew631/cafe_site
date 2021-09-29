@@ -15,7 +15,7 @@ function makeCards(arr){ if(arr){
     return( arr.map((d) => {
       // console.log(d.item_data.variations.item_variation_data)
       return(
-        <Col lg="3" md="6">
+        <Col lg="3" md="6" className="cardCol">
           <Card>
             <CardBody>
               <CardTitle tag="h3">{d.item_data.name}</CardTitle>
@@ -62,15 +62,11 @@ class Order extends Component {
   //main part of the app
   render() {
     return (
-      <div>
-        <br /><br /><br /><br /><br />
-        From the catalog API:
-        <Container>
-          <Row>
-            {makeCards(this.state.data)}
-          </Row>
-        </Container>
-      </div>
+      <Container className="main">
+        <Row>
+          {makeCards(this.state.data)}
+        </Row>
+      </Container>
     );
   }
 }
