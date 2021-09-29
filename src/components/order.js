@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   Card,
-  // CardImg,
+  CardImg,
   CardText,
   CardBody,
   CardTitle,
@@ -18,6 +18,8 @@ function makeCards(arr){ if(arr){
           <Card>
             <CardBody>
               <CardTitle tag="h3">{d.item_data.name}</CardTitle>
+              {/* The card images might have problems if there's multiple pics */}
+              <CardImg width="100%" src={d.item_data.ecom_image_uris}/>
               <div>
                 <CardText>
                   {d.item_data.description}
@@ -48,7 +50,7 @@ class Order extends Component {
     if (response.status !== 200) {
       throw Error(body.message) 
     }
-    // console.log(body)
+    console.log(body)
     return body;
   };
 
