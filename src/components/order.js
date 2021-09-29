@@ -28,55 +28,29 @@ import {
 //   },
 //   statement: {
 //     textAlign: 'left'
+//   },
+//   colSpace: {
+//     paddingTop: '1.5em'
 //   }
 // });
-
-// const makeCards = () => {
-//   // console.log(data);
-//   return(
-//     data.map((d) =>
-//       <Card>
-//         <CardBody>
-//           <CardTitle tag="h3">d.item_data.name</CardTitle>
-//           <CardText>
-//             {d.item_data.description}
-//             < br />
-//             {d.item_data.variations.item_variation_data.price_money.amount}
-//           </CardText>
-//         </CardBody>
-//       </Card>
-//     )
-//   );
-// }
-
-// renderItems(arr) {
-//   if(arr){
-//         return arr.map(({id, name}) => {
-//              return (
-//                  <li className="list-group-item"
-//             key={id}
-//             onClick={() => this.props.onItemSelected(id)}>
-//                     {name}
-//                 </li>
-//             );
-//         });
-//      }
-//   }
+// const classes = useStyles();
 
 function makeCards(arr){ if(arr){
     return( arr.map((d) => {
       // console.log(d.item_data.variations.item_variation_data)
       return(
-        <Card>
-          <CardBody>
-            <CardTitle tag="h3">{d.item_data.name}</CardTitle>
-            <CardText>
-              {d.item_data.description}
-              < br />
-              {/* {d.item_data.variations.item_variation_data.price_money.amount} */}
-            </CardText>
-          </CardBody>
-        </Card>
+        <Col lg="3" md="6">
+          <Card>
+            <CardBody>
+              <CardTitle tag="h3">{d.item_data.name}</CardTitle>
+              <CardText>
+                {d.item_data.description}
+                < br />
+                {/* {d.item_data.variations.item_variation_data.price_money.amount} */}
+              </CardText>
+            </CardBody>
+          </Card>
+        </Col>
       );
     })
   )
@@ -113,9 +87,13 @@ class Order extends Component {
   render() {
     return (
       <div>
-        <br /><br /><br /><br /><br /><br />
-        From the catalog API: 
-        {makeCards(this.state.data)}
+        <br /><br /><br /><br /><br />
+        From the catalog API:
+        <Container>
+          <Row>
+            {makeCards(this.state.data)}
+          </Row>
+        </Container>
       </div>
     );
   }

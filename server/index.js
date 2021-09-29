@@ -51,6 +51,7 @@ app.listen(port, () => {
 // });
 
 // https://masteringjs.io/tutorials/express/promises
+// https://stackoverflow.com/questions/66301281/how-to-get-the-return-value-of-a-async-function-that-returns-a-promise
 app.get('/express_backend', async (req, res) => {
   try {
     var response
