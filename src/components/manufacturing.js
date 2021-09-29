@@ -1,4 +1,3 @@
-import {Link} from "react-router-dom";
 import {createUseStyles} from 'react-jss';
 import {
   Card,
@@ -7,7 +6,7 @@ import {
   CardBody,
   CardTitle,
   /*CardSubtitle,*/
-  Button,
+  // Button,
   Container,
   Row,
   Col
@@ -52,9 +51,6 @@ function Manufacturing() {
                   <CardBody>
                     <CardTitle tag="h3">Machining</CardTitle>
                     <CardText>{copy.Manufacturing.Services.Machining.Statement}</CardText>
-                    <Link to="/manufacturing-machining">
-                      <Button>Find out more</Button>
-                    </Link>
                   </CardBody>
                 </Card>
               </Col>
@@ -64,9 +60,6 @@ function Manufacturing() {
                   <CardBody>
                     <CardTitle tag="h3">3D Printing</CardTitle>
                     <CardText>{copy.Manufacturing.Services.Printing.Statement}</CardText>
-                    <Link to="/manufacturing-printing">
-                      <Button>Find out more</Button>
-                    </Link>
                   </CardBody>
                 </Card>
               </Col>
@@ -76,9 +69,6 @@ function Manufacturing() {
                   <CardBody>
                     <CardTitle tag="h3">Laser Cutting</CardTitle>
                     <CardText>{copy.Manufacturing.Services.LaserCutting.Statement}</CardText>
-                    <Link to="/manufacturing-laser">
-                      <Button>Find out more</Button>
-                    </Link>
                   </CardBody>
                 </Card>
               </Col>
@@ -88,9 +78,6 @@ function Manufacturing() {
                   <CardBody>
                     <CardTitle tag="h3">Welding</CardTitle>
                     <CardText>{copy.Manufacturing.Services.Welding.Statement}</CardText>
-                    <Link to="/manufacturing-welding">
-                      <Button>Find out more</Button>
-                    </Link>
                   </CardBody>
                 </Card>
               </Col>
