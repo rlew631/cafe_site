@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {createUseStyles} from 'react-jss';
-import logo from './logo.svg';
 import Header from './components/header';
 import Home from './components/home'
 import Order from './components/order';
@@ -11,12 +9,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-
-const useStyles = createUseStyles({
-  body: {
-    textAlign: 'center'
-  }
-});
+import "./styles.css";
 
 class App extends Component {
   state = {
@@ -49,7 +42,6 @@ class App extends Component {
 
   //main part of the app
   render() {
-    // const classes = useStyles();
     return (
       <div className="App">
         <Router>

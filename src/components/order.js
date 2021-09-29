@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {createUseStyles} from 'react-jss';
 import {
   Card,
-  CardImg,
+  // CardImg,
   CardText,
   CardBody,
   CardTitle,
@@ -11,29 +10,6 @@ import {
   Row,
   Col
 } from 'reactstrap';
-
-
-// const useStyles = createUseStyles({
-//   main: {
-//     paddingTop: 90
-//   },
-//   cardCol: {
-//     paddingBottom: "2em"
-//   },
-//   card: {
-//     height:"100%",
-//   },
-//   services: {
-//     textAlign: 'left'
-//   },
-//   statement: {
-//     textAlign: 'left'
-//   },
-//   colSpace: {
-//     paddingTop: '1.5em'
-//   }
-// });
-// const classes = useStyles();
 
 function makeCards(arr){ if(arr){
     return( arr.map((d) => {

@@ -1,26 +1,26 @@
 import React from "react";
-import {createUseStyles} from 'react-jss';
+// import {createUseStyles} from 'react-jss';
 import {Button, Container, Row, Col } from "reactstrap";
 import copy from '../copy.json';
 
-const useStyles = createUseStyles({
-  main: {
-    paddingTop: 90
-  },
-  info: {
-    "align-self": "center",
-    flexWrap: "nowrap",
-    paddingBottom: "0.5em"
-  },
-  colKey: {
-    textAlign: 'left',
-    flexBasis: "40%",
-    flexGrow: 0
-  },
-  colValue: {
-    textAlign: 'left',
-  }
-});
+// const useStyles = createUseStyles({
+//   main: {
+//     paddingTop: 90
+//   },
+//   info: {
+//     "align-self": "center",
+//     flexWrap: "nowrap",
+//     paddingBottom: "0.5em"
+//   },
+//   colKey: {
+//     textAlign: 'left',
+//     flexBasis: "40%",
+//     flexGrow: 0
+//   },
+//   colValue: {
+//     textAlign: 'left',
+//   }
+// });
 
 class ContactForm extends React.Component {
   constructor(props) {
@@ -130,23 +130,23 @@ class ContactForm extends React.Component {
 }
 
 function Contact() {
-  const classes = useStyles();
+  // const classes = useStyles();
   return(
-    <Container className={classes.main}>
+    <Container className="main">
       <Row>
-        <Col lg={{size: 4, offset: 1}} md="7" className={classes.info}>
+        <Col lg={{size: 4, offset: 1}} md="7" className="info">
           <h2>Contact Us</h2>
-          <Row className={classes.info}>
-            <Col className={classes.colKey}>Email: </Col>
-            <Col className={classes.colValue}>{copy.Contact.Email}</Col>
+          <Row className="info">
+            <Col className="colKey">Email: </Col>
+            <Col className="colValue">{copy.Contact.Email}</Col>
           </Row>
-          <Row className={classes.info}>
-            <Col className={classes.colKey}>Phone: </Col>
-            <Col className={classes.colValue}>{copy.Contact.Phone}</Col>
+          <Row className="info">
+            <Col className="colKey">Phone: </Col>
+            <Col className="colValue">{copy.Contact.Phone}</Col>
           </Row>
-          <Row className={classes.info}>
-            <Col className={classes.colKey}>Address: </Col>
-            <Col className={classes.colValue}>
+          <Row className="info">
+            <Col className="colKey">Address: </Col>
+            <Col className="colValue">
               73 Converse St.<br/>San Francisco,<br/>CA 94103
             </Col>
           </Row>

@@ -1,0 +1,52 @@
+/* HEADER */
+.headerStrip {
+  z-index: 0;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  background-color: #f8f9fa;
+  height: 75px;
+}
+.toggle {
+  margin-right: 10px;
+}
+.logo {
+  margin-left: 10px;
+}
+.navBar {
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+.header {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: auto;
+  padding: 15px 0px;
+}
+.headerLinks {
+  color: rgba(0,0,0,.55);
+  padding-right: 0.5rem;
+  padding-left: .5rem;
+  text-decoration: none;
+}
+.links:hover {
+  color: rgba(0,0,0,.7);
+}
+/* HOME */
+.main {
+  padding-top: 90px;
+}
+.pictures {
+  width: 100%;
+}
+.textAlign {
+  padding-top: 3em;
+  padding-bottom: 1em;
+}
+/* ORDER */
+.card {
+  height: 100%;
+}

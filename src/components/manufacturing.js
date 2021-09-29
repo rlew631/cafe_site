@@ -1,4 +1,4 @@
-import {createUseStyles} from 'react-jss';
+// import {createUseStyles} from 'react-jss';
 import {
   Card,
   CardImg,
@@ -18,35 +18,35 @@ import stratysis from "../assets/Stratysis.png";
 import trotec from "../assets/Trotec.png";
 import miller from "../assets/Miller.png";
 
-const useStyles = createUseStyles({
-  main: {
-    paddingTop: 90
-  },
-  card: {
-    height:"100%"
-  },
-  statement: {
-    textAlign: 'left'
-  },
-  colSpace: {
-    paddingTop: '1.5em'
-  }
-});
+// const useStyles = createUseStyles({
+//   main: {
+//     paddingTop: 90
+//   },
+//   card: {
+//     height:"100%"
+//   },
+//   statement: {
+//     textAlign: 'left'
+//   },
+//   colSpace: {
+//     paddingTop: '1.5em'
+//   }
+// });
 
 function Manufacturing() {
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
-    <nav className={classes.main}>
+    <nav className="main">
       <Container>
         <Row>
-          <Col lg={{size:10, offset:1}} className={classes.colSpace}>
-            <p className = {classes.statement}>
+          <Col lg={{size:10, offset:1}} className="colSpace">
+            <p className ="statement">
             {copy.Manufacturing.Statement}
             </p>
             <h1>Services</h1>
             <Row justify="stretch"> {/* doesn't seem to work like flexbox stretch */}
-              <Col lg="3" md="6" className={classes.colSpace}>
-                <Card className={classes.card}>
+              <Col lg="3" md="6" className="colSpace">
+                <Card>
                   <CardImg top width="100%" src={haas} alt="Haas VF2SSYT CNC Machine" />
                   <CardBody>
                     <CardTitle tag="h3">Machining</CardTitle>
@@ -54,8 +54,8 @@ function Manufacturing() {
                   </CardBody>
                 </Card>
               </Col>
-              <Col lg="3" md="6" className={classes.colSpace}>
-                <Card className={classes.card}>
+              <Col lg="3" md="6" className="colSpace">
+                <Card>
                   <CardImg top width="100%" src={stratysis} alt="Stratysis SLA 3D Printer" />
                   <CardBody>
                     <CardTitle tag="h3">3D Printing</CardTitle>
@@ -63,8 +63,8 @@ function Manufacturing() {
                   </CardBody>
                 </Card>
               </Col>
-              <Col lg="3" md="6" className={classes.colSpace}>
-                <Card className={classes.card}>
+              <Col lg="3" md="6" className="colSpace">
+                <Card>
                   <CardImg top width="100%" src={trotec} alt="Trotec laser cutter" />
                   <CardBody>
                     <CardTitle tag="h3">Laser Cutting</CardTitle>
@@ -72,8 +72,8 @@ function Manufacturing() {
                   </CardBody>
                 </Card>
               </Col>
-              <Col lg="3" md="6" className={classes.colSpace}>
-                <Card className={classes.card}>
+              <Col lg="3" md="6" className="colSpace">
+                <Card>
                   <CardImg top width="100%" src={miller} alt="miller MIG/TIG welder" />
                   <CardBody>
                     <CardTitle tag="h3">Welding</CardTitle>
