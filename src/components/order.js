@@ -25,7 +25,7 @@ function makeCards(arr){ if(arr){
               </div>
               <div className="grow" />
               <div className="priceBox">
-                <b>Price:</b> {d.item_data.variations[0].item_variation_data.price_money.amount}
+                <b>Price:</b> ${(d.item_data.variations[0].item_variation_data.price_money.amount/100).toFixed(2)}
               </div>
             </CardBody>
           </Card>
@@ -42,7 +42,7 @@ class Order extends Component {
   
     // fetching the GET route from the Express server which matches the GET route from server.js
   callBackendAPI = async () => {
-    const response = await fetch('/express_backend');
+    const response = await fetch('/express_backend_catalog_items');
     const body = await response.json();
 
     if (response.status !== 200) {
