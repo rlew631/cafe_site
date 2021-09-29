@@ -1,4 +1,3 @@
-// import {createUseStyles} from 'react-jss';
 import {
   Card,
   CardImg,
@@ -18,23 +17,8 @@ import stratysis from "../assets/Stratysis.png";
 import trotec from "../assets/Trotec.png";
 import miller from "../assets/Miller.png";
 
-// const useStyles = createUseStyles({
-//   main: {
-//     paddingTop: 90
-//   },
-//   card: {
-//     height:"100%"
-//   },
-//   statement: {
-//     textAlign: 'left'
-//   },
-//   colSpace: {
-//     paddingTop: '1.5em'
-//   }
-// });
 
 function Manufacturing() {
-  // const classes = useStyles();
   return (
     <nav className="main">
       <Container>

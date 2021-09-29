@@ -46,16 +46,12 @@ class App extends Component {
       <div className="App">
         <Router>
           <Header/>
-          <div>
             <Switch>
               <Route path="/" exact={true} component={Home} ></Route>
               <Route path="/order" component={Order}></Route>
               <Route path="/manufacturing" component={Manufacturing}></Route>
               <Route path="/contact" component={Contact}></Route>
             </Switch>
-            {/* <p className="App-intro">{this.state.data}</p> */}
-            {/* <p className="App-intro">{JSON.stringify(this.state.data)}</p> */}
-          </div>
         </Router>
       </div>
     );
