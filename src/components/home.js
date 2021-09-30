@@ -1,5 +1,6 @@
 import {Container, Row, Col } from 'reactstrap';
 
+// stock photos
 import book_coffee from '../assets/stock_photos/book_coffee.jpg';
 import latte_art from '../assets/stock_photos/latte_art.jpg';
 import neon_coffee from '../assets/stock_photos/neon_coffee.jpg';

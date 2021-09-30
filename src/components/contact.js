@@ -1,28 +1,8 @@
-import React from "react";
-// import {createUseStyles} from 'react-jss';
+import { Component } from 'react';
 import {Button, Container, Row, Col } from "reactstrap";
 import copy from '../copy.json';
 
-// const useStyles = createUseStyles({
-//   main: {
-//     paddingTop: 90
-//   },
-//   info: {
-//     "align-self": "center",
-//     flexWrap: "nowrap",
-//     paddingBottom: "0.5em"
-//   },
-//   colKey: {
-//     textAlign: 'left',
-//     flexBasis: "40%",
-//     flexGrow: 0
-//   },
-//   colValue: {
-//     textAlign: 'left',
-//   }
-// });
-
-class ContactForm extends React.Component {
+class ContactForm extends Component {
   constructor(props) {
     super(props);
     this.submitForm = this.submitForm.bind(this);

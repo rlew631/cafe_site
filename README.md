@@ -8,4 +8,6 @@ __To-do:__
 - Gotta ditch all the mfg site stuff and update to do cafe site stuff.
 - Add firebase and deploy... see [this link](https://dev.to/ting682/e-commerce-payments-using-firebase-nodejs-and-square-api-40jn)
 - talk to henry about design stuff. Maybe have the coffee have a "stats" card or some other gimmicky thing
+- add "isloading" to the top of the order page. see [this vid](https://youtu.be/sfmL6bGbiN8?t=976)
+- [starting to get into the cart functionality stuff more...](https://youtu.be/sfmL6bGbiN8?t=1768)
 

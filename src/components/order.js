@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import {
   // Card,
   // CardImg,
@@ -42,7 +42,21 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 //   )
 // }};
 
+// export class CartItemType {
+//   id: number;
+//   category: string;
+//   description: string;
+//   image: string;
+//   prince: number;
+//   title: string;
+//   amount: number;
+// };
+
+// const handleAddToCart = (clickedItem) => null;
+
 function makeCardsMUI(arr){ if(arr){
+  // const [cartOpen, setCartOpen] = useState(false);
+  // const [cartItems, setCartItems] = useState([]);
   return( arr.map((d) => {
     return(
       <Col lg="3" md="6" className="cardCol">
@@ -67,7 +81,9 @@ function makeCardsMUI(arr){ if(arr){
             <div className="price">
               <b>Price:</b> ${(d.item_data.variations[0].item_variation_data.price_money.amount/100).toFixed(2)}
             </div>
-            <Button size="small" color="primary">
+            <Button size="small" color="primary"
+              // onClick={() => handleAddToCart(item)}
+            >
               Add to cart
             </Button>
           </CardActions>

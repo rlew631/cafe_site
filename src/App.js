@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
-import Header from './components/header';
-import Home from './components/home'
-import Order from './components/order';
-import Manufacturing from './components/manufacturing';
-import Contact from './components/contact';
+import { Component } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
 import "./styles.css";
+
+// Importing the pages
+import Header from './components/header';
+import Home from './components/home'
+import Order from './components/order';
+import Manufacturing from './components/manufacturing';
+import Contact from './components/contact';
 
 class App extends Component {
   state = {
