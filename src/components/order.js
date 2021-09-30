@@ -64,7 +64,9 @@ function makeCardsMUI(arr){ if(arr){
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <b>Price:</b> ${(d.item_data.variations[0].item_variation_data.price_money.amount/100).toFixed(2)}
+            <div className="price">
+              <b>Price:</b> ${(d.item_data.variations[0].item_variation_data.price_money.amount/100).toFixed(2)}
+            </div>
             <Button size="small" color="primary">
               Add to cart
             </Button>

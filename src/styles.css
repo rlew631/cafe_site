@@ -53,6 +53,9 @@
 .cardCol {
   margin-bottom: 1em;
 }
+.price {
+  padding-left: 0.5em
+}
 /* .grow {
   flex-grow: 1;
 } */
