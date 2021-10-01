@@ -53,8 +53,10 @@ class App extends Component {
               <Route path="/" exact={true} component={Home} ></Route>
               {/* <Route path="/order" component={Order}></Route> */}
               <Route path="/order">
-                <Order />
-                <Cart />
+                <div className="main">
+                  <Cart />
+                  <Order />
+                </div>
               </Route>
               <Route path="/manufacturing" component={Manufacturing}></Route>
               <Route path="/contact" component={Contact}></Route>

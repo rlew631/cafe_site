@@ -9,5 +9,7 @@ __To-do:__
 - Add firebase and deploy... see [this link](https://dev.to/ting682/e-commerce-payments-using-firebase-nodejs-and-square-api-40jn)
 - talk to henry about design stuff. Maybe have the coffee have a "stats" card or some other gimmicky thing
 - add "isloading" to the top of the order page. see [this vid](https://youtu.be/sfmL6bGbiN8?t=976)
-- [starting to get into the cart functionality stuff more...](https://youtu.be/sfmL6bGbiN8?t=1768)
+- figure out global hooks for item inventory count, price summation etc. going to need a state or status for each item in the cart. could also have all items present but hidden if qty is 0
+- header is eclipsed by order items when scrolling down
+- cart needs to stay fixed in top position when scrolling down
 

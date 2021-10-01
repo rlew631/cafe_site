@@ -17,21 +17,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
-// export class CartItemType {
-//   id: number;
-//   category: string;
-//   description: string;
-//   image: string;
-//   prince: number;
-//   title: string;
-//   amount: number;
-// };
-
-// const handleAddToCart = (clickedItem) => null;
-
 function makeCardsMUI(arr){ if(arr){
-  // const [cartOpen, setCartOpen] = useState(false);
-  // const [cartItems, setCartItems] = useState([]);
   return( arr.map((d) => {
     return(
       <Col lg="3" md="6" className="cardCol">
@@ -41,7 +27,6 @@ function makeCardsMUI(arr){ if(arr){
               component="img"
               height="140"
               image={d.item_data.ecom_image_uris}
-              // alt="green iguana"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
@@ -98,12 +83,10 @@ class Order extends Component {
   // main part of page
   render() {
     return (
-      <Container className="main">
+      <Container>
         <Row>
-          {/* {makeCardsBootStrap(this.state.data)} */}
           {makeCardsMUI(this.state.data)}
         </Row>
-        {/* {Cart()} */}
       </Container>
     );
   }
