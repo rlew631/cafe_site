@@ -63,8 +63,6 @@ app.listen(port, () => {
 //   res.send(JSON.parse(response.body).items)
 // });
 
-global.itemData = null
-
 app.get('/express_backend_catalog_items', async (req, res) => {
   try {
     var response
