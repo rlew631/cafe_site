@@ -20,20 +20,20 @@ function makeCardsMUI(arr){ if(arr){
             <CardMedia
               component="img"
               height="140"
-              image={d.image}
+              image={d.item_data.ecom_image_uris}
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                {d.name}
+                {d.item_data.name}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {d.description}
+                {d.item_data.description}
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
             <div className="price">
-              <b>Price:</b> ${d.price}
+              <b>Price:</b> ${(d.item_data.variations[0].item_variation_data.price_money.amount/100).toFixed(2)}
             </div>
             <Button size="small" color="primary"
               // onClick={() => handleAddToCart(item)}
@@ -49,9 +49,9 @@ function makeCardsMUI(arr){ if(arr){
 }};
 
 class Order extends Component {
-  // state = {
-  //     data: null
-  //   };
+  state = {
+      data: null
+    };
   
     // fetching the GET route from the Express server which matches the GET route from server.js
   callBackendAPI = async () => {
@@ -69,8 +69,18 @@ class Order extends Component {
     this.callBackendAPI()
       // import and pass the square data
       .then(res => {
-        // this.setState({ data: res })
-        global.itemData = res // this can be accessed across files
+        this.setState({ data: res })
+        // global.itemData = res // this can be accessed across files
+        global.itemData = res.map((d) => {
+          return {
+            'name': d.item_data.name,
+            'description': d.item_data.description,
+            //image returns an Array with the urls or undefined if no images
+            'image': d.item_data.ecom_image_uris,
+            'price': d.item_data.variations[0].item_variation_data.price_money.amount/100,
+            'quantity': 0
+          }
+        })
       })
       // log the square data
       // .then(res => console.log(res))
@@ -82,8 +92,8 @@ class Order extends Component {
     return (
       <Container>
         <Row>
-          {/* {makeCardsMUI(this.state.data)} */}
-          {makeCardsMUI(global.itemData)}
+          {makeCardsMUI(this.state.data)}
+          {/* {makeCardsMUI(global.itemData)} */}
         </Row>
       </Container>
     );
