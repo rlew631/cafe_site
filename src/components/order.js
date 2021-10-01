@@ -20,20 +20,20 @@ function makeCardsMUI(arr){ if(arr){
             <CardMedia
               component="img"
               height="140"
-              image={d.item_data.ecom_image_uris}
+              image={d.image}
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                {d.item_data.name}
+                {d.name}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {d.item_data.description}
+                {d.description}
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
             <div className="price">
-              <b>Price:</b> ${(d.item_data.variations[0].item_variation_data.price_money.amount/100).toFixed(2)}
+              <b>Price:</b> ${d.price}
             </div>
             <Button size="small" color="primary"
               // onClick={() => handleAddToCart(item)}
