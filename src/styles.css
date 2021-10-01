@@ -1,6 +1,6 @@
 /* HEADER */
 .headerStrip {
-  z-index: 0;
+  z-index: 1;
   position: fixed;
   top: 0px;
   right: 0px;
@@ -71,5 +71,11 @@
 
 /* CART */
 .cart {
-  float: right;
+  z-index: 1;
+  position: fixed;
+  right: 1.5em;
+}
+.cart-title {
+  margin-top: 0.5em;
+  margin-left: 0.5em;
 }

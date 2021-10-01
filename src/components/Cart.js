@@ -38,6 +38,7 @@ function Cart() {
       role="presentation"
       onKeyDown={toggleDrawer('right', false)}
     >
+      <h3 className="cart-title">Your Cart</h3>
       <Divider />
       <List>
         {['food item 1', 'food item 2'].map((text, index) => (

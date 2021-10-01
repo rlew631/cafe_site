@@ -10,6 +10,5 @@ __To-do:__
 - talk to henry about design stuff. Maybe have the coffee have a "stats" card or some other gimmicky thing
 - add "isloading" to the top of the order page. see [this vid](https://youtu.be/sfmL6bGbiN8?t=976)
 - figure out global hooks for item inventory count, price summation etc. going to need a state or status for each item in the cart. could also have all items present but hidden if qty is 0
-- header is eclipsed by order items when scrolling down
-- cart needs to stay fixed in top position when scrolling down
+- cart shouldn't overlap menu items when resizing window smaller
 
