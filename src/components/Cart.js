@@ -69,23 +69,24 @@ function Cart() {
           </ListItem>
         ))}
       </List>
+      {JSON.stringify(global.itemData)}
     </Box>
   );
   // icon to activate the sidebar
   return (
     <div className="cart">
-          <Button onClick={toggleDrawer('right', true)}>
-            <Badge color="secondary" badgeContent={itemCount}>
-              <ShoppingCartIcon />{" "}
-            </Badge>
-          </Button>
-          <Drawer
-            anchor={'right'}
-            open={drawerState['right']}
-            onClose={toggleDrawer('right', false)}
-          >
-            {list('right')}
-          </Drawer>
+      <Button onClick={toggleDrawer('right', true)}>
+        <Badge color="secondary" badgeContent={itemCount}>
+          <ShoppingCartIcon />{" "}
+        </Badge>
+      </Button>
+      <Drawer
+        anchor={'right'}
+        open={drawerState['right']}
+        onClose={toggleDrawer('right', false)}
+      >
+        {list('right')}
+      </Drawer>
     </div>
   );
 

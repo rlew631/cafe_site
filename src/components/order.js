@@ -1,11 +1,5 @@
 import { Component } from 'react';
 import {
-  // Card,
-  // CardImg,
-  // CardText,
-  // CardBody,
-  // CardTitle,
-  // CardSubtitle,
   Container,
   Row,
   Col
@@ -55,9 +49,9 @@ function makeCardsMUI(arr){ if(arr){
 }};
 
 class Order extends Component {
-  state = {
-      data: null
-    };
+  // state = {
+  //     data: null
+  //   };
   
     // fetching the GET route from the Express server which matches the GET route from server.js
   callBackendAPI = async () => {
@@ -74,7 +68,10 @@ class Order extends Component {
   componentDidMount() {
     this.callBackendAPI()
       // import and pass the square data
-      .then(res => this.setState({ data: res }))
+      .then(res => {
+        // this.setState({ data: res })
+        global.itemData = res // this can be accessed across files
+      })
       // log the square data
       // .then(res => console.log(res))
 
@@ -85,7 +82,8 @@ class Order extends Component {
     return (
       <Container>
         <Row>
-          {makeCardsMUI(this.state.data)}
+          {/* {makeCardsMUI(this.state.data)} */}
+          {makeCardsMUI(global.itemData)}
         </Row>
       </Container>
     );
