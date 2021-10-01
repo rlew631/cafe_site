@@ -10,37 +10,12 @@ import {
   Row,
   Col
 } from 'reactstrap';
+
+import { Button, CardActionArea, CardActions } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
-
-// function makeCardsBootStrap(arr){ if(arr){
-//     return( arr.map((d) => {
-//       return(
-//         <Col lg="3" md="6" className="cardCol">
-//           <Card>
-//             <CardBody>
-//               <CardTitle tag="h3">{d.item_data.name}</CardTitle>
-//               {/* The card images might have problems if there's multiple pics */}
-//               <CardImg width="100%" src={d.item_data.ecom_image_uris}/>
-//               <div>
-//                 <CardText>
-//                   {d.item_data.description}
-//                 </CardText>
-//               </div>
-//               <div className="grow" />
-//               <div className="priceBox">
-//                 <b>Price:</b> ${(d.item_data.variations[0].item_variation_data.price_money.amount/100).toFixed(2)}
-//               </div>
-//             </CardBody>
-//           </Card>
-//         </Col>
-//       );
-//     })
-//   )
-// }};
 
 // export class CartItemType {
 //   id: number;
@@ -128,6 +103,7 @@ class Order extends Component {
           {/* {makeCardsBootStrap(this.state.data)} */}
           {makeCardsMUI(this.state.data)}
         </Row>
+        {/* {Cart()} */}
       </Container>
     );
   }

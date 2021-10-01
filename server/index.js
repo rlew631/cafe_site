@@ -6,14 +6,12 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 
-// import { v4 as uuidv4 } from 'uuid'
 // square api stuff
 let data = require('../keys.json')
 const { Client, Environment, ApiError } = require('square');
 
 //initializing the square api client
 const client = new Client({
-  // environment: Environment.Sandbox,
   environment: Environment.Production,
   accessToken: data.token
 })
@@ -51,29 +49,29 @@ app.listen(port, () => {
 
 // https://masteringjs.io/tutorials/express/promises
 // https://stackoverflow.com/questions/66301281/how-to-get-the-return-value-of-a-async-function-that-returns-a-promise
-app.get('/express_backend_catalog_items', async (req, res) => {
-  try {
-    var response
-    response = await client.catalogApi.searchCatalogItems({});
-    // console.log(response);
-    console.log("sent catalog data")
-  } catch(error) {
-    console.log(error);
-    response = {"error" : "PROBLEEMMMMM"}
-  }
-  res.send(JSON.parse(response.body).items)
-});
-
-// make this one get the images if possible
+// this one works
 // app.get('/express_backend_catalog_items', async (req, res) => {
 //   try {
 //     var response
 //     response = await client.catalogApi.searchCatalogItems({});
-//     // response = JSON.parse(response.body).items
-//     console.log(response);
+//     // console.log(response);
+//     console.log("sent catalog data")
 //   } catch(error) {
 //     console.log(error);
 //     response = {"error" : "PROBLEEMMMMM"}
 //   }
 //   res.send(JSON.parse(response.body).items)
 // });
+
+app.get('/express_backend_catalog_items', async (req, res) => {
+  try {
+    var response
+    response = await JSON.parse((await client.catalogApi.searchCatalogItems({})).body).items;
+    // console.log(response);
+    console.log("sent catalog data")
+  } catch(error) {
+    console.log(error);
+    response = {"error" : "PROBLEEMMMMM"}
+  }
+  res.send(response)
+});
