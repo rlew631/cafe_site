@@ -2,6 +2,10 @@ import { useState } from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 import {
   Badge,
   Button,
@@ -16,6 +20,49 @@ import {
 } from '@mui/material';
 
 //https://mui.com/components/drawers/
+
+function cartItems(arr) {
+  // const [itemCount, setItemCount] = useState(1);
+  if(arr){
+    return(
+      arr.map((item) => 
+      <Card>
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {item.name}
+          </Typography>
+        </CardContent>
+        <CardMedia
+          component="img"
+          // height="140"
+          image={item.image}
+        />
+        {/* <ButtonGroup>
+          <Button
+            onClick={() => {
+              setItemCount(Math.max(itemCount - 1, 0));
+            }}
+          >
+            {" "}
+            <RemoveIcon fontSize="small" />
+          </Button>
+          <Button
+            onClick={() => {
+              setItemCount(itemCount + 1);
+            }}
+          >
+            {" "}
+            <AddIcon fontSize="small" />
+          </Button>
+        </ButtonGroup> */}
+        <div>
+          ${item.price.toFixed(2)}
+        </div>
+      </Card>
+      )
+    )
+  }
+}
 
 function Cart() {
   // cart item count
@@ -68,7 +115,8 @@ function Cart() {
           </ListItem>
         ))}
       </List>
-      {JSON.stringify(global.itemData)}
+      {/* {JSON.stringify(global.itemData)} */}
+      {cartItems(global.itemData)}
     </Box>
   );
   // icon to activate the sidebar

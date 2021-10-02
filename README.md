@@ -11,4 +11,5 @@ __To-do:__
 - add "isloading" to the top of the order page. see [this vid](https://youtu.be/sfmL6bGbiN8?t=976)
 - figure out global hooks for item inventory count, price summation etc. going to need a state or status for each item in the cart. could also have all items present but hidden if qty is 0
 - cart shouldn't overlap menu items when resizing window smaller
-
+- put in a function that maps `itemData` to a series of cards/buttons
+  - after that figure out how to update the quantities individually from the "add to cart" prompt and hide them if qty is 0
