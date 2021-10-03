@@ -34,7 +34,7 @@ function cartItems(arr) {
         </CardContent>
         <CardMedia
           component="img"
-          // height="140"
+          height="100"
           image={item.image}
         />
         {/* <ButtonGroup>
@@ -67,6 +67,7 @@ function cartItems(arr) {
 function Cart() {
   // cart item count
   const [itemCount, setItemCount] = useState(1);
+  // global.const [itemCount, setItemCount] = useState(1);
   // drawer toggle
   const [drawerState, setDrawerState] = useState({right: false});
 
