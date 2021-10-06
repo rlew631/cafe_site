@@ -10,7 +10,7 @@ import "./styles.css";
 import Header from './components/header';
 import Home from './components/home'
 import Order from './components/order';
-// import Cart from './components/Cart';
+import Cart from './components/Cart';
 import Manufacturing from './components/manufacturing';
 import Contact from './components/contact';
 
@@ -54,7 +54,7 @@ class App extends Component {
               {/* <Route path="/order" component={Order}></Route> */}
               <Route path="/order">
                 <div className="main">
-                  {/* <Cart /> */}
+                  <Cart />
                   <Order />
                 </div>
               </Route>

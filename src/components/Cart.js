@@ -82,7 +82,7 @@ function getSubTotal(arr) {
 
 function Cart() {
   // cart item count
-  const [itemCount, setItemCount] = useState(1);
+  const [itemCount, setItemCount] = useState(0);
   // drawer toggle
   const [drawerState, setDrawerState] = useState({right: false});
 
@@ -107,7 +107,7 @@ function Cart() {
       <Divider className="sidebar-divider"/>
       <div className="sidebar-pricing">
         <div>Subtotal: </div>
-        <div>${getSubTotal(global.itemData).toFixed(2)}</div>
+        <div>${getSubTotal(global.itemData)}</div>
       </div>
       <div className="sidebar-pricing">
         <div>Tax(7.5%): </div>
