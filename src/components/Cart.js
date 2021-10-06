@@ -10,13 +10,13 @@ import {
   Badge,
   Button,
   ButtonGroup,
-  List,
+  // List,
   Drawer,
   Box,
   Divider,
-  ListItem,
-  ListItemIcon,
-  ListItemText
+  // ListItem,
+  // ListItemIcon,
+  // ListItemText
 } from '@mui/material';
 
 //https://mui.com/components/drawers/
@@ -42,14 +42,19 @@ function cartItems(arr, itemCount, setItemCount) {
           <ButtonGroup>
             <Button
               onClick={() => {
+                item.quantity = Math.max(item.quantity -1, 0);
                 setItemCount(Math.max(itemCount - 1, 0));
               }}
             >
               {" "}
               <RemoveIcon fontSize="small" />
             </Button>
+            <Button>
+              {item.quantity}
+            </Button>
             <Button
               onClick={() => {
+                item.quantity ++;
                 setItemCount(itemCount + 1);
               }}
             >
@@ -57,6 +62,7 @@ function cartItems(arr, itemCount, setItemCount) {
               <AddIcon fontSize="small" />
             </Button>
           </ButtonGroup>
+          ${(item.price*item.quantity).toFixed(2)}
         </div>
       </Card>
       )
@@ -64,10 +70,19 @@ function cartItems(arr, itemCount, setItemCount) {
   }
 }
 
+function getSubTotal(arr) {
+  if(arr){
+    var subtotal = 0
+    for (var i = 0; i < arr.length; i++) {
+      var lineItem = arr[i].quantity * arr[i].price
+      subtotal = subtotal + lineItem; }
+  }
+  return subtotal
+}
+
 function Cart() {
   // cart item count
   const [itemCount, setItemCount] = useState(1);
-  // global.const [itemCount, setItemCount] = useState(1);
   // drawer toggle
   const [drawerState, setDrawerState] = useState({right: false});
 
@@ -78,7 +93,7 @@ function Cart() {
     setDrawerState({ ...drawerState, [anchor]: open });
   };
 
-  // working sidebar code
+  // sidebar code
   const list = (anchor) => (
     <Box
       sx={250}
@@ -87,8 +102,21 @@ function Cart() {
       className = "sidebar"
     >
       <h3 className="cart-title">Your Cart</h3>
-      <Divider />
+      <Divider className="sidebar-divider"/>
       {cartItems(global.itemData, itemCount, setItemCount)}
+      <Divider className="sidebar-divider"/>
+      <div className="sidebar-pricing">
+        <div>Subtotal: </div>
+        <div>${getSubTotal(global.itemData).toFixed(2)}</div>
+      </div>
+      <div className="sidebar-pricing">
+        <div>Tax(7.5%): </div>
+        <div>${(getSubTotal(global.itemData)*0.075).toFixed(2)}</div>
+      </div>
+      <div className="sidebar-pricing">
+        <b>Total: </b>
+        <b>${(getSubTotal(global.itemData)*1.075).toFixed(2)}</b>
+      </div>
     </Box>
   );
   // icon to activate the sidebar

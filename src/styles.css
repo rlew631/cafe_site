@@ -84,8 +84,18 @@
   margin-right: 1.5em;
 }
 .sidebar-item {
-  margin-top: 1em;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
 }
 .sidebar-item-text {
   margin: 0.75em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar-pricing {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
 }

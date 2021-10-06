@@ -13,3 +13,9 @@ __To-do:__
 - cart shouldn't overlap menu items when resizing window smaller
 - put in a function that maps `itemData` to a series of cards/buttons
   - after that figure out how to update the quantities individually from the "add to cart" prompt and hide them if qty is 0
+
+figure out how to get the "add to cart" buttons on the order page working in the cart
+fix the issue where you can remove items from the cart when qty is zero and it prevents you from removing other items
+figure out how to change the state so it hides the items when qty is zero (after making it so you can add the items from the home page)
+
+
