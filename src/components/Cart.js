@@ -21,12 +21,12 @@ import {
 
 //https://mui.com/components/drawers/
 
-function cartItems(arr) {
+function cartItems(arr, itemCount, setItemCount) {
   // const [itemCount, setItemCount] = useState(1);
   if(arr){
     return(
       arr.map((item) => 
-      <Card>
+      <Card className = "sidebar-item">
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {item.name}
@@ -37,26 +37,26 @@ function cartItems(arr) {
           height="100"
           image={item.image}
         />
-        {/* <ButtonGroup>
-          <Button
-            onClick={() => {
-              setItemCount(Math.max(itemCount - 1, 0));
-            }}
-          >
-            {" "}
-            <RemoveIcon fontSize="small" />
-          </Button>
-          <Button
-            onClick={() => {
-              setItemCount(itemCount + 1);
-            }}
-          >
-            {" "}
-            <AddIcon fontSize="small" />
-          </Button>
-        </ButtonGroup> */}
-        <div>
+        <div className="sidebar-item-text">
           ${item.price.toFixed(2)}
+          <ButtonGroup>
+            <Button
+              onClick={() => {
+                setItemCount(Math.max(itemCount - 1, 0));
+              }}
+            >
+              {" "}
+              <RemoveIcon fontSize="small" />
+            </Button>
+            <Button
+              onClick={() => {
+                setItemCount(itemCount + 1);
+              }}
+            >
+              {" "}
+              <AddIcon fontSize="small" />
+            </Button>
+          </ButtonGroup>
         </div>
       </Card>
       )
@@ -84,40 +84,11 @@ function Cart() {
       sx={250}
       role="presentation"
       onKeyDown={toggleDrawer('right', false)}
+      className = "sidebar"
     >
       <h3 className="cart-title">Your Cart</h3>
       <Divider />
-      <List>
-        {['food item 1', 'food item 2'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ?
-              <div>food item 1 icon</div> : <div>food item 2 icon</div>}
-              <ButtonGroup>
-                <Button
-                  onClick={() => {
-                    setItemCount(Math.max(itemCount - 1, 0));
-                  }}
-                >
-                  {" "}
-                  <RemoveIcon fontSize="small" />
-                </Button>
-                <Button
-                  onClick={() => {
-                    setItemCount(itemCount + 1);
-                  }}
-                >
-                  {" "}
-                  <AddIcon fontSize="small" />
-                </Button>
-              </ButtonGroup>
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      {/* {JSON.stringify(global.itemData)} */}
-      {cartItems(global.itemData)}
+      {cartItems(global.itemData, itemCount, setItemCount)}
     </Box>
   );
   // icon to activate the sidebar
