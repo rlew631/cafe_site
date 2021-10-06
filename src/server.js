@@ -14,7 +14,7 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
-async function cartItems(catalogData) {
+function cartItems(catalogData) {
   
   arr = catalogData.map(d => {
     return {
@@ -22,24 +22,26 @@ async function cartItems(catalogData) {
       'description': d.item_data.description,
       //image returns an Array with the urls or undefined if no images
       'image': d.item_data.ecom_image_uris,
-      'price': d.item_data.variations[0].item_variation_data.price_money.amount/100
-    }}
+      'price': d.item_data.variations[0].item_variation_data.price_money.amount/100,
+      'quantity': 0
+      }
+    }
   )
-  console.log(arr)
   return arr
 }
 
 app.get('/express_backend_catalog_items', async (req, res) => {
   try {
-    var response
-    response = cartItems(
+    // var response
+    var response = cartItems(
       await JSON.parse(
         (await client.catalogApi.searchCatalogItems({})).body
       ).items
     );
     console.log(response)
     console.log("Sent catalog data")
-  } catch(error) {
+  }
+  catch(error) {
     console.log(error);
     response = {"error" : "PROBLEEMMMMM"}
   }

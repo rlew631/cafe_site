@@ -12,40 +12,41 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 function makeCardsMUI(arr){ if(arr){
-  return( arr.map((d) => {
-    return(
-      <Col lg="3" md="6" className="cardCol">
-        <Card sx={{ maxWidth: 345 }} className="card">
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image={d.item_data.ecom_image_uris}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {d.item_data.name}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {d.item_data.description}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <div className="price">
-              <b>Price:</b> ${(d.item_data.variations[0].item_variation_data.price_money.amount/100).toFixed(2)}
-            </div>
-            <Button size="small" color="primary"
-              // onClick={() => handleAddToCart(item)}
-            >
-              Add to cart
-            </Button>
-          </CardActions>
-        </Card>
-      </Col>
-    );
-  })
-  )
+    return( arr.map((item) => {
+      return(
+        <Col lg="3" md="6" className="cardCol">
+          <Card sx={{ maxWidth: 345 }} className="card">
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="140"
+                image={item.image}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {item.name}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {item.description}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <div className="price">
+                <b>Price:</b> ${(item.price).toFixed(2)}
+              </div>
+              <Button size="small" color="primary"
+                // onClick={() => handleAddToCart(item)}
+              >
+                Add to cart
+              </Button>
+            </CardActions>
+          </Card>
+        </Col>
+      );
+    })
+    )
+
 }};
 
 class Order extends Component {
@@ -65,35 +66,23 @@ class Order extends Component {
     return body;
   };
 
-  componentDidMount() {
+  componentDidMount = async () => {
     this.callBackendAPI()
-      // import and pass the square data
-      .then(res => {
-        this.setState({ data: res })
-        // global.itemData = res // this can be accessed across files
-        global.itemData = res.map((d) => {
-          return {
-            'name': d.item_data.name,
-            'description': d.item_data.description,
-            //image returns an Array with the urls or undefined if no images
-            'image': d.item_data.ecom_image_uris,
-            'price': d.item_data.variations[0].item_variation_data.price_money.amount/100,
-            'quantity': 0
-          }
-        })
-      })
-      // log the square data
-      // .then(res => console.log(res))
-
-      .catch(err => console.log(err));
+    // import and pass the square data
+    .then(res => {
+      this.setState({ data: res })
+      global.itemData = res // this can be accessed across files
+    })
+    .catch(err => console.log(err));
   }
   // main part of page
   render() {
     return (
       <Container>
         <Row>
-          {makeCardsMUI(this.state.data)}
+          {/* {makeCardsMUI(this.state.data)} */}
           {/* {makeCardsMUI(global.itemData)} */}
+          {makeCardsMUI(this.state.data)}
         </Row>
       </Container>
     );
