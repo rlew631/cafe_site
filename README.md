@@ -12,6 +12,6 @@ __To-do:__
 - put in a function that maps `itemData` to a series of cards/buttons
   - after that figure out how to update the quantities individually from the "add to cart" prompt and hide them if qty is 0
 
-fix the issue where you can remove items from the cart when qty is zero and it prevents you from removing other items
+fix the issue where you can remove items from the cart when qty is zero and it prevents you from removing other items. This should probably use the global variables and load them if not available. This will help with overwriting the quantity values when switching between pages.
 
 make it so everything is using global item counts or just importing the values from order

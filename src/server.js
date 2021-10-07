@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 
-let data = require('../keys.json')
+let data = require('./keys.json')
 const { Client, Environment, ApiError } = require('square');
 
 const client = new Client({

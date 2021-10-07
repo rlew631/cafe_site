@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.57eecc0c.chunk.css",
+    "main.js": "/static/js/main.5b995346.chunk.js",
+    "main.js.map": "/static/js/main.5b995346.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.fc8b799f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.fc8b799f.js.map",
+    "static/css/2.da1eef19.chunk.css": "/static/css/2.da1eef19.chunk.css",
+    "static/js/2.e861070c.chunk.js": "/static/js/2.e861070c.chunk.js",
+    "static/js/2.e861070c.chunk.js.map": "/static/js/2.e861070c.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.da1eef19.chunk.css.map": "/static/css/2.da1eef19.chunk.css.map",
+    "static/css/main.57eecc0c.chunk.css.map": "/static/css/main.57eecc0c.chunk.css.map",
+    "static/js/2.e861070c.chunk.js.LICENSE.txt": "/static/js/2.e861070c.chunk.js.LICENSE.txt",
+    "static/media/Haas.4c76aec8.png": "/static/media/Haas.4c76aec8.png",
+    "static/media/Miller.fbede181.png": "/static/media/Miller.fbede181.png",
+    "static/media/Stratysis.52ab690f.png": "/static/media/Stratysis.52ab690f.png",
+    "static/media/Trotec.cbf70bca.png": "/static/media/Trotec.cbf70bca.png",
+    "static/media/book_coffee.79a5b774.jpg": "/static/media/book_coffee.79a5b774.jpg",
+    "static/media/latte_art.f9f293c3.jpg": "/static/media/latte_art.f9f293c3.jpg",
+    "static/media/logo.1e32682f.svg": "/static/media/logo.1e32682f.svg",
+    "static/media/neon_coffee.5ccaab42.jpg": "/static/media/neon_coffee.5ccaab42.jpg",
+    "static/media/pastries.366518b4.jpg": "/static/media/pastries.366518b4.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fc8b799f.js",
+    "static/css/2.da1eef19.chunk.css",
+    "static/js/2.e861070c.chunk.js",
+    "static/css/main.57eecc0c.chunk.css",
+    "static/js/main.5b995346.chunk.js"
+  ]
+}
