@@ -37,6 +37,7 @@ function makeCardsMUI(arr){ if(arr){
               </div>
               <Button size="small" color="primary"
                 // onClick={() => handleAddToCart(item)}
+                onClick={() => item.quantity ++}
               >
                 Add to cart
               </Button>
@@ -48,6 +49,8 @@ function makeCardsMUI(arr){ if(arr){
     )
 
 }};
+
+global.itemData = null;
 
 class Order extends Component {
   state = {

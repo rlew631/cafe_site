@@ -6,6 +6,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import Order from '../components/order';
 import {
   Badge,
   Button,
@@ -25,47 +26,51 @@ function cartItems(arr, itemCount, setItemCount) {
   // const [itemCount, setItemCount] = useState(1);
   if(arr){
     return(
-      arr.map((item) => 
-      <Card className = "sidebar-item">
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {item.name}
-          </Typography>
-        </CardContent>
-        <CardMedia
-          component="img"
-          height="100"
-          image={item.image}
-        />
-        <div className="sidebar-item-text">
-          ${item.price.toFixed(2)}
-          <ButtonGroup>
-            <Button
-              onClick={() => {
-                item.quantity = Math.max(item.quantity -1, 0);
-                setItemCount(Math.max(itemCount - 1, 0));
-              }}
-            >
-              {" "}
-              <RemoveIcon fontSize="small" />
-            </Button>
-            <Button>
-              {item.quantity}
-            </Button>
-            <Button
-              onClick={() => {
-                item.quantity ++;
-                setItemCount(itemCount + 1);
-              }}
-            >
-              {" "}
-              <AddIcon fontSize="small" />
-            </Button>
-          </ButtonGroup>
-          ${(item.price*item.quantity).toFixed(2)}
-        </div>
-      </Card>
-      )
+      arr.map((item) => {
+        if(item.quantity>0){
+          return(
+            <Card className = "sidebar-item">
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {item.name}
+                </Typography>
+              </CardContent>
+              <CardMedia
+                component="img"
+                height="100"
+                image={item.image}
+              />
+              <div className="sidebar-item-text">
+                ${item.price.toFixed(2)}
+                <ButtonGroup>
+                  <Button
+                    onClick={() => {
+                      item.quantity = Math.max(item.quantity -1, 0);
+                      setItemCount(Math.max(itemCount - 1, 0));
+                    }}
+                  >
+                    {" "}
+                    <RemoveIcon fontSize="small" />
+                  </Button>
+                  <Button>
+                    {item.quantity}
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      item.quantity ++;
+                      setItemCount(itemCount + 1);
+                    }}
+                  >
+                    {" "}
+                    <AddIcon fontSize="small" />
+                  </Button>
+                </ButtonGroup>
+                ${(item.price*item.quantity).toFixed(2)}
+              </div>
+            </Card>
+          )
+        }
+      })
     )
   }
 }
@@ -76,6 +81,15 @@ function getSubTotal(arr) {
     for (var i = 0; i < arr.length; i++) {
       var lineItem = arr[i].quantity * arr[i].price
       subtotal = subtotal + lineItem; }
+  }
+  return subtotal
+}
+
+function getCartCount(arr) {
+  if(arr){
+    var subtotal = 0
+    for (var i = 0; i < arr.length; i++) {
+      subtotal = subtotal + arr[i].quantity; }
   }
   return subtotal
 }
@@ -123,7 +137,8 @@ function Cart() {
   return (
     <div className="cart">
       <Button onClick={toggleDrawer('right', true)}>
-        <Badge color="secondary" badgeContent={itemCount}>
+        <Badge color="secondary" badgeContent={getCartCount(global.itemData)}>
+          {/* <Badge color="secondary" badgeContent={getCartCount(Order.state.data)}> */}
           <ShoppingCartIcon />{" "}
         </Badge>
       </Button>
