@@ -87,7 +87,7 @@ function getSubTotal(arr) {
 
 function getCartCount(arr) {
   if(arr){
-    var subtotal = 0
+    let subtotal = 0
     for (var i = 0; i < arr.length; i++) {
       subtotal = subtotal + arr[i].quantity; }
   }
@@ -96,7 +96,7 @@ function getCartCount(arr) {
 
 function Cart() {
   // cart item count
-  const [itemCount, setItemCount] = useState(0);
+  const [itemCount, setItemCount] = useState(getCartCount(global.itemData));
   // drawer toggle
   const [drawerState, setDrawerState] = useState({right: false});
 
@@ -108,7 +108,7 @@ function Cart() {
   };
 
   // sidebar code
-  const list = (anchor) => (
+  const list = () => (
     <Box
       sx={250}
       role="presentation"
@@ -137,7 +137,9 @@ function Cart() {
   return (
     <div className="cart">
       <Button onClick={toggleDrawer('right', true)}>
-        <Badge color="secondary" badgeContent={getCartCount(global.itemData)}>
+        <Badge color="secondary"
+        // badgeContent={getCartCount(global.itemData)}>
+        badgeContent={itemCount}>
           {/* <Badge color="secondary" badgeContent={getCartCount(Order.state.data)}> */}
           <ShoppingCartIcon />{" "}
         </Badge>

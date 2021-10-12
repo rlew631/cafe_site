@@ -12,7 +12,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 function makeCardsMUI(arr){ if(arr){
-    return( arr.map((item) => {
+    // return( arr.map((item) => {
+    return( global.itemData.map((item) => {
       return(
         <Col lg="3" md="6" className="cardCol">
           <Card sx={{ maxWidth: 345 }} className="card">
@@ -50,7 +51,7 @@ function makeCardsMUI(arr){ if(arr){
 
 }};
 
-global.itemData = null;
+// global.itemData = null;
 
 class Order extends Component {
   state = {
@@ -74,7 +75,10 @@ class Order extends Component {
     // import and pass the square data
     .then(res => {
       this.setState({ data: res })
-      global.itemData = res // this can be accessed across files
+      // don't overwrite if already loaded...
+      if (global.itemData == null) {
+        global.itemData = res // this can be accessed across files
+      }
     })
     .catch(err => console.log(err));
   }

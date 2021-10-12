@@ -15,10 +15,10 @@ app.listen(port, () => {
 });
 
 function cartItems(catalogData) {
-  
   arr = catalogData.map(d => {
     return {
       'name': d.item_data.name,
+      'visibility': d.item_data.ecom_visibility,
       'description': d.item_data.description,
       //image returns an Array with the urls or undefined if no images
       'image': d.item_data.ecom_image_uris,
@@ -27,6 +27,7 @@ function cartItems(catalogData) {
       }
     }
   )
+  // return arr.filter(d => d.item_data.ecom_visibility == 'VISIBLE');
   return arr
 }
 
@@ -38,7 +39,8 @@ app.get('/express_backend_catalog_items', async (req, res) => {
         (await client.catalogApi.searchCatalogItems({})).body
       ).items
     );
-    console.log(response)
+
+    // console.log(response)
     console.log("Sent catalog data")
   }
   catch(error) {

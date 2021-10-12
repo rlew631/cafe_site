@@ -1,4 +1,7 @@
-import { Component } from 'react';
+import { Component,
+  createContext,
+  // useContext
+} from 'react';
 import {
   Container,
   Row,
@@ -50,7 +53,8 @@ function makeCardsMUI(arr){ if(arr){
 
 }};
 
-global.itemData = null;
+// global.itemData = null;
+// export const MyContext = createContext([]);
 
 class Order extends Component {
   state = {
@@ -81,11 +85,11 @@ class Order extends Component {
   // main part of page
   render() {
     return (
-      <Container>
+      <Container className="main">
         <Row>
           {/* {makeCardsMUI(this.state.data)} */}
-          {/* {makeCardsMUI(global.itemData)} */}
-          {makeCardsMUI(this.state.data)}
+          {makeCardsMUI(global.itemData)}
+          {/* {makeCardsMUI(this.state.data)} */}
         </Row>
       </Container>
     );

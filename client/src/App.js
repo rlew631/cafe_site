@@ -14,6 +14,8 @@ import Cart from './components/Cart';
 import Manufacturing from './components/manufacturing';
 import Contact from './components/contact';
 
+global.itemData = null;
+
 class App extends Component {
   state = {
       data: null

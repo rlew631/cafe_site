@@ -6,9 +6,8 @@ import {
   Navbar,
   NavbarBrand,
   NavbarToggler,
-  NavItem,
+  // NavItem,
 } from 'reactstrap';
-import {Link} from "react-router-dom";
 
 const links = [
   { href: "/", text: 'Home' },
@@ -22,10 +21,8 @@ function Header() {
   const toggle = () => {
     setIsOpen(!isOpen);
   }
-  const createNavItem = ({ href, text }) => (
-    <NavItem>
-      <Link to={href} className="headerLinks">{text}</Link>
-    </NavItem>
+  const createNavItem = ({ link, text }) => (
+    <a href={link} className="headerLinks">{text}</a>
   );
 
   return (

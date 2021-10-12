@@ -6,18 +6,13 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import Order from '../components/order';
 import {
   Badge,
   Button,
   ButtonGroup,
-  // List,
   Drawer,
   Box,
   Divider,
-  // ListItem,
-  // ListItemIcon,
-  // ListItemText
 } from '@mui/material';
 
 //https://mui.com/components/drawers/
@@ -94,7 +89,35 @@ function getCartCount(arr) {
   return subtotal
 }
 
+
+// fetching the GET route from the Express server which matches the GET route from server.js
+async function callBackendAPI() {
+  const response = await fetch('/express_backend_catalog_items');
+  const body = await response.json();
+
+  if (response.status !== 200) {
+    throw Error(body.message) 
+  }
+  console.log(body)
+  return body;
+};
+
+async function componentDidMount() {
+  callBackendAPI()
+  // import and pass the square data
+  .then(res => {
+    global.itemData = res // this can be accessed across files
+  })
+  .catch(err => console.log(err));
+}
+
+
 function Cart() {
+
+
+componentDidMount()
+
+
   // cart item count
   const [itemCount, setItemCount] = useState(0);
   // drawer toggle
@@ -108,7 +131,7 @@ function Cart() {
   };
 
   // sidebar code
-  const list = (anchor) => (
+  const list = () => (
     <Box
       sx={250}
       role="presentation"
@@ -133,12 +156,12 @@ function Cart() {
       </div>
     </Box>
   );
+
   // icon to activate the sidebar
   return (
-    <div className="cart">
+    <div className="cart main">
       <Button onClick={toggleDrawer('right', true)}>
         <Badge color="secondary" badgeContent={getCartCount(global.itemData)}>
-          {/* <Badge color="secondary" badgeContent={getCartCount(Order.state.data)}> */}
           <ShoppingCartIcon />{" "}
         </Badge>
       </Button>
